@@ -47,6 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsManejoBd.cs" />
+    <Compile Include="ClsPedidos.cs" />
+    <Compile Include="frmLoguin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoguin.Designer.cs">
+      <DependentUpon>frmLoguin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManejoBd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLoguin.resx">
+      <DependentUpon>frmLoguin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManejoBd.resx">
       <DependentUpon>ManejoBd.cs</DependentUpon>
     </EmbeddedResource>
