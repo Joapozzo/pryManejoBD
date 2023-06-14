@@ -21,15 +21,22 @@ namespace pryManejoBD
         private void frmManejoDatos_Load(object sender, EventArgs e)
         {
             cmbTablas.BackColor = Color.DarkGray;
-            ClsPedidos objPedidos = new ClsPedidos();
-            objPedidos.conectarPedidos();
-            objPedidos.cargarCombo(cmbPedidos);
+
+
+            //ClsPedidos objPedidos = new ClsPedidos();
+            //objPedidos.conectarPedidos();
+            //objPedidos.cargarCombo(cmbPedidos);
+     
+            clsVerdulero objVerdulero = new clsVerdulero();
+            objVerdulero.conectarVendedores();
+            objVerdulero.cargarCombo(cmbVendedor, cmbProducto);
+
         }
 
         private void btnConectarBase_Click(object sender, EventArgs e)
         {
-            ClsManejoBd objConnBase = new ClsManejoBd();
-            stringConn = objConnBase.conectarBase(btnConectarBase, openFileDialog, cmbTablas);
+            //ClsManejoBd objConnBase = new ClsManejoBd();
+            //stringConn = objConnBase.conectarBase(btnConectarBase, openFileDialog, cmbTablas);
         }
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,11 +45,21 @@ namespace pryManejoBD
             objConnBase.cargarGrilla(cmbTablas, dgvTabla, stringConn);
         }
 
+
+        // SEGUNDA PESTAÑA
+
         private void cmbPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
             ClsPedidos objPedidos = new ClsPedidos();
             objPedidos.conectarPedidos();
             objPedidos.cargarGrilla(cmbPedidos, dgvPedidos);
+        }
+
+        //TERCERA PESTAÑA
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
